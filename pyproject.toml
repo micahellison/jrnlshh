@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "jrnlshh"
+version = "0.1.0"
+description = "Silent data entry plugin for jrnl"
+authors = ["Micah Jerome Ellison <micah.jerome.ellison@gmail.com>"]
+license = "GPLv3"
+packages = [
+    { include = "jrnl/contrib/importer/*.py" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.7,<3.10"
+py-getch = "^1.0.1"
+jrnl = ">=2.8"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

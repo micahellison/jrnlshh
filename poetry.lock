@@ -2,7 +2,7 @@
 name = "ansiwrap"
 version = "0.8.4"
 description = "textwrap, but savvy to ANSI colors and styles"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -13,7 +13,7 @@ textwrap3 = ">=0.9.2"
 name = "asteval"
 version = "0.9.25"
 description = "Safe, minimalistic evaluator of python expression using ast module"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -43,7 +43,7 @@ tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>
 name = "cffi"
 version = "1.14.5"
 description = "Foreign Function Interface for Python calling C code."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -54,7 +54,7 @@ pycparser = "*"
 name = "colorama"
 version = "0.4.4"
 description = "Cross-platform colored terminal text."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -62,7 +62,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 name = "cryptography"
 version = "3.4.7"
 description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -81,7 +81,7 @@ test = ["pytest (>=6.0)", "pytest-cov", "pytest-subtests", "pytest-xdist", "pret
 name = "importlib-metadata"
 version = "4.5.0"
 description = "Read metadata from Python packages"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -105,7 +105,7 @@ python-versions = "*"
 name = "jeepney"
 version = "0.6.0"
 description = "Low-level, pure Python DBus protocol wrapper."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -114,30 +114,35 @@ test = ["pytest", "pytest-trio", "pytest-asyncio", "testpath", "trio"]
 
 [[package]]
 name = "jrnl"
-version = "2.8.1"
+version = "v2.8.1"
 description = "Collect your thoughts and notes without leaving the command line."
-category = "main"
+category = "dev"
 optional = false
-python-versions = ">=3.7.0,<3.10"
+python-versions = ">=3.7.0, <3.10"
+develop = true
 
 [package.dependencies]
-ansiwrap = ">=0.8.4,<0.9.0"
-asteval = ">=0.9,<0.10"
+ansiwrap = "^0.8.4"
+asteval = "^0.9"
 colorama = ">=0.4"
 cryptography = ">=3.0"
 keyring = ">=21.0"
 parsedatetime = ">=2.6"
-python-dateutil = ">=2.8,<3.0"
+python-dateutil = "^2.8"
 pytz = ">=2020"
 pyxdg = ">=0.27.0"
 pyyaml = ">=5.1"
-tzlocal = ">2.0,<3.0"
+tzlocal = ">2.0, <3.0"
+
+[package.source]
+type = "directory"
+url = "../jrnl"
 
 [[package]]
 name = "keyring"
 version = "23.0.1"
 description = "Store and access your passwords safely."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -166,7 +171,7 @@ pyparsing = ">=2.0.2"
 name = "parsedatetime"
 version = "2.6"
 description = "Parse human-readable date/time text."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -204,7 +209,7 @@ python-versions = "*"
 name = "pycparser"
 version = "2.20"
 description = "C parser in Python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -242,7 +247,7 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xm
 name = "python-dateutil"
 version = "2.8.1"
 description = "Extensions to the standard Python datetime module"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 
@@ -253,7 +258,7 @@ six = ">=1.5"
 name = "pytz"
 version = "2021.1"
 description = "World timezone definitions, modern and historical"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -261,7 +266,7 @@ python-versions = "*"
 name = "pywin32-ctypes"
 version = "0.2.0"
 description = ""
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -269,7 +274,7 @@ python-versions = "*"
 name = "pyxdg"
 version = "0.27"
 description = "PyXDG contains implementations of freedesktop.org standards in python."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -277,7 +282,7 @@ python-versions = "*"
 name = "pyyaml"
 version = "5.4.1"
 description = "YAML parser and emitter for Python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
 
@@ -285,7 +290,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
 name = "secretstorage"
 version = "3.3.1"
 description = "Python bindings to FreeDesktop.org Secret Service API"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -297,7 +302,7 @@ jeepney = ">=0.6"
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
@@ -305,7 +310,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 name = "textwrap3"
 version = "0.9.2"
 description = "textwrap from Python 3.6 backport (plus a few tweaks)"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -321,7 +326,7 @@ python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 name = "typing-extensions"
 version = "3.10.0.0"
 description = "Backported and Experimental Type Hints for Python 3.5+"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -329,7 +334,7 @@ python-versions = "*"
 name = "tzlocal"
 version = "2.1"
 description = "tzinfo object for the local timezone"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -340,7 +345,7 @@ pytz = "*"
 name = "zipp"
 version = "3.4.1"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -351,7 +356,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<3.10"
-content-hash = "7fad617608d063e3385702cf11cbca257d3f3c95bb7c452786ae55b1d0e5de31"
+content-hash = "f14e340ad4764281ef2b338a2151c12bc4d68beabddb70f69007759034658cd4"
 
 [metadata.files]
 ansiwrap = [
@@ -438,10 +443,7 @@ jeepney = [
     {file = "jeepney-0.6.0-py3-none-any.whl", hash = "sha256:aec56c0eb1691a841795111e184e13cad504f7703b9a64f63020816afa79a8ae"},
     {file = "jeepney-0.6.0.tar.gz", hash = "sha256:7d59b6622675ca9e993a6bd38de845051d315f8b0c72cca3aef733a20b648657"},
 ]
-jrnl = [
-    {file = "jrnl-2.8.1-py3-none-any.whl", hash = "sha256:51e9b9f49f54890a9a14ab3228138575daa956461a9170ceed0064c7fff5089f"},
-    {file = "jrnl-2.8.1.tar.gz", hash = "sha256:a69f0fa9be3dff7fa32d8a2ea3697ed828329b1db595fde23bbba5eab460d519"},
-]
+jrnl = []
 keyring = [
     {file = "keyring-23.0.1-py3-none-any.whl", hash = "sha256:8f607d7d1cc502c43a932a275a56fe47db50271904513a379d39df1af277ac48"},
     {file = "keyring-23.0.1.tar.gz", hash = "sha256:045703609dd3fccfcdb27da201684278823b72af515aedec1a8515719a038cb8"},

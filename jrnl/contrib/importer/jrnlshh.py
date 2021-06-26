@@ -1,6 +1,6 @@
 import datetime
 
-from py-getch import getch
+from getch import getch
 
 from jrnl import Entry
 from jrnl.plugins.base import BaseImporter
@@ -23,7 +23,7 @@ class Importer(BaseImporter):
 
         print('Press Ctrl+C or Ctrl+Z or whatever the keyboard interrupt is when done.')
         
-        try
+        try:
             while True:
                 txtInput = txtInput + getch()
               

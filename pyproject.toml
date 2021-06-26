@@ -5,7 +5,8 @@ description = "Silent data entry plugin for jrnl"
 authors = ["Micah Jerome Ellison <micah.jerome.ellison@gmail.com>"]
 license = "GPLv3"
 packages = [
-    { include = "jrnl/contrib/importer/*.py" }
+    { include = "jrnl" },
+    { include = "jrnl/contrib/importer/jrnlshh.py" }
 ]
 
 [tool.poetry.dependencies]
@@ -14,6 +15,7 @@ py-getch = "^1.0.1"
 jrnl = ">=2.8"
 
 [tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

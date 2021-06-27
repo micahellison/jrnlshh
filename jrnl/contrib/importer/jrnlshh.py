@@ -19,13 +19,24 @@ class Importer(BaseImporter):
         then add the input to a new journal entry.
         """
 
-        txtInput = ''
-
         print('Press Ctrl+C or Ctrl+Z or whatever the keyboard interrupt is when done.')
-        
-        try:
-            while True:
-                txtInput = txtInput + getch()
+        txt_input = silently_get_characters()
               
-        except KeyboardInterrupt:
-            journal.entries.append(Entry.Entry(journal, datetime.datetime.Now(), txtInput))
+        journal.entries.append(Entry.Entry(journal, datetime.datetime.now(), txt_input))
+
+
+def silently_get_characters():
+    txt_input = ''
+
+    while True:
+        get_character = getch()
+        if isinstance(get_character, bytes):
+            get_character = get_character.decode("utf-8")
+
+        if get_character == '\x1a': # ctrl+Z
+            return txt_input
+
+        if get_character == '\x03': # ctrl+C
+            raise KeyboardInterrupt
+
+        txt_input = txt_input + get_character
